@@ -11,7 +11,7 @@ def get_parser(_=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--token_path", type=str, help="path of API token")
     parser.add_argument("--output_dir", type=str, help="output directory")
-    parser.add_argument("--tag", type=str, help="user tag", default="2YYV9GLLR")
+    parser.add_argument("--tag", type=str, help="user tag")
     return parser
 
 
