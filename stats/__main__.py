@@ -19,12 +19,10 @@ if __name__ == "__main__":
     args, _ = get_parser().parse_known_args()
 
     brawl_stats_logger = BrawlStatsLogger(Path(args.token_path).expanduser(), args.tag)
-    parsed_logs = brawl_stats_logger.parse_battle_logs(args.tag)
-
-    df_parsed_logs = pd.DataFrame(parsed_logs)
-    df_parsed_logs.to_csv(
-        Path(args.output_dir).expanduser().joinpath(f"log.{utils.get_datetime()}.csv"), index=False
-    )
 
     all_logs = brawl_stats_logger.parse_battle_logs_all_user(args.tag)
     df_all_logs = pd.DataFrame(all_logs)
+
+    df_all_logs.to_csv(
+        Path(args.output_dir).expanduser().joinpath(f"log.{utils.get_datetime()}.csv"), index=False
+    )
