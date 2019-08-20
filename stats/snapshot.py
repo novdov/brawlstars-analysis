@@ -8,7 +8,7 @@ import stats.utils as utils
 
 
 class BrawlStatsLogger:
-    TARGET_MATCHES = {"gemGrab", "heist", "bounty", "brawlBall"}
+    TARGET_MATCHES = {"gemGrab", "heist", "bounty", "brawlBall", "siege"}
 
     def __init__(self, token_path: Union[PosixPath, str], tag: str):
         self.client = brawlstats.Client(utils.read_file(token_path))
