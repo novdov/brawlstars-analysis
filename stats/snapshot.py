@@ -1,5 +1,5 @@
 from pathlib import PosixPath
-from typing import List, Mapping, Optional, Union
+from typing import List, Mapping, Optional, Union, Tuple
 
 import brawlstats
 from tqdm import tqdm
@@ -51,7 +51,7 @@ class BrawlStatsLogger:
             self,
             battle_log: Mapping,
             tag: str
-    ) -> Optional[Union[List[Mapping], int]]:
+    ) -> Optional[Tuple[List[Mapping], int]]:
         """Parse single battle log."""
 
         match_cond = battle_log["battle"]["mode"] in self.TARGET_MATCHES
